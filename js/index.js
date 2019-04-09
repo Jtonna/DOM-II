@@ -35,20 +35,20 @@ backgroundColor.addEventListener('keydown', () => {
     setInterval( ()=> {
         backgroundColor.style.background = '#F43B38';
     }, 300);
-    setInterval ( ()=>{
+    setInterval ( ()=> {
         backgroundColor.style.background = '#F7AEF8';
     }, 400);
     setInterval ( ()=> {
         backgroundColor.style.background = '#72DDF7';
     }, 500);
-    setTimeout (()=>{
+    setTimeout ( ()=> {
         alert ("Yeah, you really broke things... click \"OK\" and then press the SPACEBAR to fix it!")
     },10000);
 });
 
 // Custom Key Down
 backgroundColorBody = document.querySelector('body');
-backgroundColorBody.addEventListener('keydown', function(){
+backgroundColorBody.addEventListener('keydown', () => {
     if (event.keyCode == '32') {
         backgroundColorBody.style.background = "white";
     }
