@@ -46,10 +46,33 @@ backgroundColor.addEventListener('keydown', () => {
     },10000);
 });
 
-// Custom Key Down
+// Custom Key Down (spacebar)
 backgroundColorBody = document.querySelector('body');
 backgroundColorBody.addEventListener('keydown', () => {
     if (event.keyCode == '32') {
         backgroundColorBody.style.background = "white";
     }
+});
+
+// Scroll Position
+let last_known_scroll_position = 0;
+let ticking = false;
+const img = document.querySelector('src');
+
+function doSomething(scroll_pos) {
+  // Do something with the scroll position
+  img.style.width = "100px";
+}
+
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
 });
